@@ -1,5 +1,7 @@
 # MGQL: An Executable, Small-Step Semantics of GQL
 
+[![CI](https://github.com/EngineeringSoftware/mgql/actions/workflows/ci.yml/badge.svg)](https://github.com/EngineeringSoftware/mgql/actions/workflows/ci.yml)
+
 This is the artifact for the OOPSLA 2026 paper *MGQL: An Executable,
 Small-Step Semantics of GQL* (submission #337). It contains the complete
 Lean 4 mechanization described in Section 7 of the paper: the MGQL
