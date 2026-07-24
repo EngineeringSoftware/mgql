@@ -19,7 +19,7 @@ Key properties, each verifiable with the instructions below:
   (276 unit tests, 32 assertions across 30 worked examples, 42 LDBC
   integration assertions).
 
-We apply for the **Functional**, **Reusable**, and **Results
+We apply for the **Available**, **Functional**, **Reusable**, and **Results
 Reproduced** badges.
 
 ## Contents
