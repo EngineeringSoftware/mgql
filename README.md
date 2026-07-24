@@ -1,4 +1,4 @@
-# Artifact: MGQL — An Executable, Small-Step Semantics of GQL
+# MGQL: An Executable, Small-Step Semantics of GQL
 
 This is the artifact for the OOPSLA 2026 paper *MGQL: An Executable,
 Small-Step Semantics of GQL* (submission #337). It contains the complete
