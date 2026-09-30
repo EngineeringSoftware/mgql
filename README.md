@@ -31,12 +31,12 @@ It contains roughly 23,700 lines of Lean 4 across 14 modules, with no dependency
 
 | Path | Purpose |
 |---|---|
-| `MGQL/*.lean` | The mechanization (fourteen modules, listed in [Section 9](#9-proof-structure-and-organization)) |
-| `MGQL/Examples/` | 30 worked kick-the-tires examples, one file per layer of the development |
-| `verify-soundness.sh` | One-command audit: clean build, `sorry`/axiom scan, per-theorem axiom report, LDBC benchmark |
+| `MGQL/*.lean` | The mechanization (14 modules)|
+| `MGQL/Examples/` | 30 worked examples for getting started |
+| `verify-soundness.sh` | A single end-to-end run with: clean build, `sorry`/axiom scan, per-theorem axiom report, LDBC benchmark |
 | `run-test.sh` | Re-runs one test group at a time (see `./run-test.sh --list`) |
-| `HOWTO.md` | Reusability guide: check a GQL query of your own against the mechanization |
-| `Dockerfile` | Ubuntu 22.04 image that builds everything and runs `verify-soundness.sh` |
+| `HOWTO.md` | Reusability guide for checking your own GQL queries with MGQL |
+| `Dockerfile` | Docker recipe based on Ubuntu 22.04 image that builds everything and runs `verify-soundness.sh` |
 | `LICENSE` | MIT license |
 | `lean-toolchain`, `lakefile.lean`, `lake-manifest.json` | Toolchain pin (Lean 4.14.0) and build configuration |
 
