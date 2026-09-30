@@ -2,27 +2,16 @@
 
 [![CI](https://github.com/EngineeringSoftware/mgql/actions/workflows/ci.yml/badge.svg)](https://github.com/EngineeringSoftware/mgql/actions/workflows/ci.yml)
 
-This is the artifact for the OOPSLA 2026 paper *MGQL: An Executable,
-Small-Step Semantics of GQL* (submission #337). It contains the complete
-Lean 4 mechanization described in Section 7 of the paper: the MGQL
-calculus and its schema-aware type system, a big-step evaluator and a
-small-step engine proven equivalent to it, machine-checked proofs of
-every theorem the paper names, a certified executable type checker, and
-the LDBC SNB case study.
+This is the artifact for the OOPSLA 2026 paper [MGQL: An Executable,
+Small-Step Semantics of GQL](https://2026.splashcon.org/details/oopsla-2026/85/MGQL-An-Executable-Small-Step-Semantics-of-GQL). 
+It was awarded the [ACM SIGPLAN Distinguished Artifact Award](https://2026.splashcon.org/track/splash-2026-artifact-evaluation#pagetab-a5b3a822-8cf9-4aaa-9cc4-b7e92101415b)
+and contains the Lean 4 mechanization of MGQL, including:
+- big-step and small-step engines with proven equivalence;
+- machine-checked proofs of every theorem and type soundness given in the paper;
+- an executable type checker; and
+- evaluation on queries (ported from Cypher) from the [Graph Data Council's (GDC)](https://ldbcouncil.org) [Interactive Social Network Benchmark (SNB)](https://ldbcouncil.org/benchmarks/snb/).
 
-Key properties, each verifiable with the instructions below:
-
-- about 23,700 lines of Lean 4 across fourteen modules, with no
-  dependency beyond core Lean (no Mathlib, no Std);
-- zero `sorry`, zero user-declared axioms; every named result depends
-  only on the standard Lean axioms `propext`, `Classical.choice`, and
-  `Quot.sound`;
-- 350 executable `native_decide` assertions re-checked on every build
-  (276 unit tests, 32 assertions across 30 worked examples, 42 LDBC
-  integration assertions).
-
-We apply for the **Available**, **Functional**, **Reusable**, and **Results
-Reproduced** badges.
+It contains roughly 23,700 lines of Lean 4 across 14 modules, with no dependency beyond core Lean (no Mathlib, no Std); zero `sorry`, zero user-declared axioms, and only on the standard Lean axioms (`propext`, `Classical.choice`, `Quot.sound`); and 350 executable `native_decide` assertions re-checked on every build (276 unit tests, 32 assertions across 30 worked examples, 42 LDBC integration assertions).
 
 ## Contents
 
