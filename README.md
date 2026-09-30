@@ -42,16 +42,12 @@ It contains roughly 23,700 lines of Lean 4 across 14 modules, with no dependency
 
 ## 2. Requirements
 
-- **Hardware.** Any 64-bit x86 or ARM machine with about 8 GB of RAM
-  and 3 GB of free disk. No specialized hardware is needed.
-- **Software.** Either Docker (any recent version), or the Lean
+- **Hardware.** A 64-bit x86 or ARM machine with about 8 GB of RAM
+  and 3 GB of free disk.
+- **Software.** Either Docker, or the Lean
   toolchain manager [elan](https://github.com/leanprover/elan) for a
   local build. elan installs the pinned Lean 4.14.0 automatically from
-  the `lean-toolchain` file; no other software is required.
-- **Time.** The initial build compiles the full development and checks
-  all 350 assertions; it takes about one minute on a recent laptop
-  (Apple Silicon), and a few minutes on older hardware or under Docker
-  QEMU emulation. Everything after that is incremental and fast.
+  the `lean-toolchain` file.
 
 ## 3. Getting started (kick the tires)
 
@@ -62,8 +58,7 @@ docker build -t mgql-artifact .
 docker run --rm mgql-artifact
 ```
 
-`docker build` compiles the full development inside the image (this is
-where the build time goes); `docker run` executes
+`docker build` compiles the full development inside the image; `docker run` executes
 `verify-soundness.sh` and must end with:
 
 ```
@@ -521,5 +516,4 @@ configurations:
   re-runs the benchmark through the Lean interpreter instead.
 
 The Docker image is built from `ubuntu:22.04` by the included
-`Dockerfile`, which installs elan, copies the sources, and precompiles
-the full development; it supports both x86-64 and ARM64.
+`Dockerfile`. It supports both x86-64 and ARM64.
