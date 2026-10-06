@@ -58,8 +58,7 @@ docker build -t mgql-artifact .
 docker run --rm mgql-artifact
 ```
 
-`docker build` compiles the full development inside the image; `docker run` executes
-`verify-soundness.sh` and must end with:
+`docker run` executes `verify-soundness.sh` and the expected output is:
 
 ```
 ALL CHECKS PASSED
@@ -73,8 +72,7 @@ export PATH="$HOME/.elan/bin:$PATH"
 lake build
 ```
 
-A clean `lake build` that ends without errors is itself a meaningful
-check: it re-elaborates every proof and re-executes every
+A clean `lake build` re-elaborates every proof and re-executes every
 `native_decide` assertion in the test and example modules.
 
 ### Sanity test
