@@ -65,10 +65,6 @@ docker run --rm mgql-artifact
 ALL CHECKS PASSED
 ```
 
-On Apple Silicon or other ARM hosts, plain `docker build` works; to
-force the architecture explicitly use
-`docker buildx build --platform linux/arm64 -t mgql-artifact --load .`.
-
 ### Option B: Local build
 
 ```
