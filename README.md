@@ -77,45 +77,33 @@ A clean `lake build` re-elaborates every proof and re-executes every
 
 ### Sanity test
 
-After either option, re-check one example group by hand (inside the
-container: `docker run --rm -it mgql-artifact bash`, then the same
-commands):
+Re-check an example group with (use `docker run --rm -it mgql-artifact bash` for Docker build, and then the same
+as below):
 
 ```
-./run-test.sh --list               # show the twelve targets
+./run-test.sh --list               # show the 12 examples
 ./run-test.sh graph-conformance    # expected: PASS (2 examples)
-./run-test.sh -v end-to-end        # expected: PASS (5 examples), one line per check
+./run-test.sh -v end-to-end        # expected: PASS (5 examples)
 ```
-
-Each target re-elaborates its file and re-executes its assertions; a
-failing assertion aborts with a compile error at the offending line.
 
 ## 4. Evaluation instructions
-
-The full evaluation is four commands and takes well under an hour, of
-which most is the one-time build.
 
 **Step 1: build.** `lake build` (or the Docker build from Section 3).
 
 **Step 2: run the audit script.** `./verify-soundness.sh` performs, in
 order:
 
-1. a build of the full development;
+1. a full build;
 2. a scan proving there is no live `sorry` in any module;
 3. a scan proving there is no user-declared `axiom` in any module;
-4. `#print axioms` on every named result from the paper, so you can
-   confirm each theorem exists and depends only on the three standard
-   Lean axioms (the per-theorem expectation is the Axioms column of the
-   [correspondence tables](#6-paper-to-artifact-correspondence));
-5. the LDBC SNB benchmark run (Table 2 of the paper);
-6. a summary of the test layers.
+4. `#print axioms` to confirm each theorem exists and depends only on
+   the three standard Lean axioms (see [correspondence tables](#6-paper-to-artifact-correspondence));
+6. the LDBC SNB benchmark run.
 
-The expected output is reproduced at the end of this section.
-
-**Step 3: run every test group.** `./run-test.sh all` re-executes the
-30 worked examples group by group, then the 276-assertion unit suite,
-then the 42-assertion LDBC integration suite. Expected: every line ends
-in `PASS (n examples)` followed by `ALL TARGETS PASSED`.
+**Step 3: run all tests.** `./run-test.sh all` re-executes the
+30 worked examples, followed by the 276-assertion unit suite, and finally
+the 42-assertion LDBC integration suite. Every line is expected to end
+with `PASS (n examples)` with the final result being `ALL TARGETS PASSED`.
 
 **Step 4: run the benchmark executable.**
 
@@ -139,9 +127,6 @@ mechanizes. To re-check its axioms yourself, elaborate a two-line file:
 echo 'import MGQL.TypeChecker
 #print axioms MGQL.inferQuery_sound' > /tmp/Ax.lean && lake env lean /tmp/Ax.lean
 ```
-
-To compare the module inventory against Table 1 of the paper:
-`wc -l MGQL/*.lean`.
 
 ### Expected output of verify-soundness.sh
 
