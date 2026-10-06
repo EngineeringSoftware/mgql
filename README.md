@@ -11,7 +11,7 @@ and contains the Lean 4 mechanization of MGQL, including:
 - an executable type checker; and
 - evaluation on queries (ported from Cypher) from the [Graph Data Council's (GDC)](https://ldbcouncil.org) [Interactive Social Network Benchmark (SNB)](https://ldbcouncil.org/benchmarks/snb/).
 
-It contains roughly 23,700 lines of Lean 4 across 14 modules, with no dependency beyond core Lean (no Mathlib, no Std); zero `sorry`, zero user-declared axioms, and only on the standard Lean axioms (`propext`, `Classical.choice`, `Quot.sound`); and 350 executable `native_decide` assertions re-checked on every build (276 unit tests, 32 assertions across 30 worked examples, 42 LDBC integration assertions).
+It contains no dependency beyond core Lean (no Mathlib, no Std); zero `sorry`, zero user-declared axioms, and only on the standard Lean axioms (`propext`, `Classical.choice`, `Quot.sound`); and 350 executable `native_decide` assertions re-checked on every build (276 unit tests, 32 assertions across 30 worked examples, 42 LDBC integration assertions).
 
 ## Contents
 
